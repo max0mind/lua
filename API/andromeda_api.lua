@@ -22,7 +22,7 @@
         max0mind
 ]]
 
-local ver = 1
+local ver = "2.0.0"
 
 local andromeda = {
     ["log"] = function(text) -- just print() who tf will use this
@@ -100,7 +100,10 @@ local andromeda = {
         return vartable
     end,
     ['enabled'] = true,
-    ['player'] = game:GetService("Players").LocalPlayer,
+    ['disabled'] = false,
+    ['player'] = function()
+        return game:GetService("Players").LocalPlayer
+    end,
     ['camera'] = function()
         return game:GetService("Workspace").Camera
     end,
