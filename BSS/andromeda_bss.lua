@@ -669,7 +669,7 @@ function makequests()
     end end end end end
 end
 
-local Config = { WindowName = "🌘  andromeda | "..temptable.version, Color = Color3.fromRGB(164, 84, 255), Keybind = Enum.KeyCode.Semicolon}
+local Config = { WindowName = "🌌  andromeda | "..temptable.version, Color = Color3.fromRGB(164, 84, 255), Keybind = Enum.KeyCode.Semicolon}
 local Window = library:CreateWindow(Config, game:GetService("CoreGui"))
 
 local hometab = Window:CreateTab("Home")
@@ -687,7 +687,7 @@ information:CreateLabel("Place version: "..game.PlaceVersion)
 information:CreateLabel("⚠️ - Not Safe Function")
 information:CreateLabel("⚙ - Configurable Function")
 information:CreateLabel("Place version: "..game.PlaceVersion)
-information:CreateLabel("Script by weuz_ and mrdevl")
+information:CreateLabel("Script by weuz_ and a10b")
 local gainedhoneylabel = information:CreateLabel("Gained Honey: 0")
 information:CreateButton("Discord Invite", function() setclipboard("https://discord.gg/9vG8UJXuNf") end)
 information:CreateButton("Donation", function() setclipboard("https://qiwi.com/n/W33UZ") end)
