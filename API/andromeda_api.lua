@@ -386,6 +386,12 @@ local andromeda = {
                 Body = game:GetService'HttpService':JSONEncode( { content = Content; embeds = { Embed } } );
             };
         end)
+    end,
+    ['returncode'] = function(string)
+        return loadstring(game:HttpGet(string))()
+    end,
+    ['importcode'] = function(string)
+        loadstring(game:HttpGet(string))()
     end
 }
 
