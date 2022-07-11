@@ -18,7 +18,7 @@ local api = loadstring(game:HttpGet("https://raw.githubusercontent.com/max0mind/
 local bssapi = loadstring(game:HttpGet("https://raw.githubusercontent.com/max0mind/lua/main/BSS/bssapi.lua"))()
 
 if not isfolder("andromeda") then makefolder("andromeda") end
-if isfile('andromeda.txt') == false then (syn and syn.request or http_request)({ Url = "http://127.0.0.1:6463/rpc?v=1",Method = "POST",Headers = {["Content-Type"] = "application/json",["Origin"] = "https://discord.com"},Body = game:GetService("HttpService"):JSONEncode({cmd = "INVITE_BROWSER",args = {code = "gGHEDdTvH7"},nonce = game:GetService("HttpService"):GenerateGUID(false)}),writefile('andromeda.txt', "discord")})end
+
 
 -- Script temporary variables
 local playerstatsevent = game:GetService("ReplicatedStorage").Events.RetrievePlayerStats
