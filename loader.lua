@@ -143,6 +143,8 @@ local function TDAH_fake_script() -- MainHub.Animate
 			LoadingTXT.Text = LoadingTXT.Text.."."
 			task.wait(1)
 		end
+		LoadingTXT.Text = "Done"
+		task.wait(1)
 		AndromedaIMG.Visible = false
 		LoadingTXT.Visible = false
 		purpleLine.Parent.Visible = false
