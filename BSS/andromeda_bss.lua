@@ -212,7 +212,6 @@ local andromeda = {
     },
     blacklistedfields = {},
     killerandromeda = {},
-    bltokens = {},
     toggles = {
         autofarm = false,
         farmclosestleaf = false,
@@ -243,7 +242,6 @@ local andromeda = {
         traincrab = false,
         avoidmobs = false,
         farmsprouts = false,
-        enabletokenblacklisting = false,
         farmunderballoons = false,
         farmsnowflakes = false,
         collectgingerbreads = false,
@@ -342,13 +340,7 @@ function gettoken(v3)
     end
     task.wait()
     for e,r in next, game:GetService("Workspace").Collectibles:GetChildren() do
-        itb = false
-        if r:FindFirstChildOfClass("Decal") and andromeda.toggles.enabletokenblacklisting then
-            if api.findvalue(andromeda.bltokens, string.split(r:FindFirstChildOfClass("Decal").Texture, 'rbxassetid://')[2]) then
-                itb = true
-            end
-        end
-        if tonumber((r.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude) <= temptable.magnitude/1.4 and not itb and (v3-r.Position).magnitude <= temptable.magnitude then
+        if tonumber((r.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude) <= temptable.magnitude/1.4 and (v3-r.Position).magnitude <= temptable.magnitude then
             farm(r)
         end
     end
@@ -780,7 +772,6 @@ farmsettings:CreateToggle("^ Loop Speed On Autofarming",nil, function(State) and
 farmsettings:CreateToggle("Don't Walk In Field",nil, function(State) andromeda.toggles.farmflower = State end)
 farmsettings:CreateToggle("Convert Hive Balloon",nil, function(State) andromeda.toggles.convertballoons = State end)
 farmsettings:CreateToggle("Don't Farm Tokens",nil, function(State) andromeda.toggles.donotfarmtokens = State end)
-farmsettings:CreateToggle("Enable Token Blacklisting",nil, function(State) andromeda.toggles.enabletokenblacklisting = State end)
 farmsettings:CreateSlider("Walk Speed", 0, 120, 70, false, function(Value) andromeda.vars.walkspeed = Value end)
 farmsettings:CreateSlider("Jump Power", 0, 120, 70, false, function(Value) andromeda.vars.jumppower = Value end)
 local raresettings = setttab:CreateSection("Tokens Settings")
@@ -795,17 +786,6 @@ raresettings:CreateButton("Remove Token From Rares List", function()
     game:GetService("CoreGui"):FindFirstChild(_G.windowname).Main:FindFirstChild("Rares List D",true):Destroy()
     raresettings:CreateDropdown("Rares List", andromeda.rares, function(Option) end)
 end)
-raresettings:CreateButton("Add Token To Blacklist", function()
-    table.insert(andromeda.bltokens, rarename)
-    game:GetService("CoreGui"):FindFirstChild(_G.windowname).Main:FindFirstChild("Tokens Blacklist D",true):Destroy()
-    raresettings:CreateDropdown("Tokens Blacklist", andromeda.bltokens, function(Option) end)
-end)
-raresettings:CreateButton("Remove Token From Blacklist", function()
-    table.remove(andromeda.bltokens, api.tablefind(andromeda.bltokens, rarename))
-    game:GetService("CoreGui"):FindFirstChild(_G.windowname).Main:FindFirstChild("Tokens Blacklist D",true):Destroy()
-    raresettings:CreateDropdown("Tokens Blacklist", andromeda.bltokens, function(Option) end)
-end)
-raresettings:CreateDropdown("Tokens Blacklist", andromeda.bltokens, function(Option) end)
 raresettings:CreateDropdown("Rares List", andromeda.rares, function(Option) end)
 local dispsettings = setttab:CreateSection("Auto Dispenser & Auto Boosters Settings")
 dispsettings:CreateToggle("Royal Jelly Dispenser", nil, function(State) andromeda.dispensesettings.rj = not andromeda.dispensesettings.rj end)
