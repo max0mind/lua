@@ -40,7 +40,6 @@ local andromedaDefault = andromeda
 local ChunkUtil = require(game:GetService("ReplicatedStorage").LoadModule)("ChunkUtil")
 local Constants = require(game:GetService("ReplicatedStorage").LoadModule)("Constants")
 
-for i,egg in next, game:GetService("ReplicatedStorage").Assets.Eggs:GetChildren() do table.insert(temptable.allEggs, egg.Name) end
 for i,ore in next, game:GetService("ReplicatedStorage").Assets.ViewportItems:GetChildren() do table.insert(temptable.ores, ore.Name) end    
 -- Functions
 function mineDefault()
