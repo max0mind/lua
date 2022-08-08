@@ -109,7 +109,8 @@ task.spawn(function() while task.wait(.01) do -- main
                     tlab.TextColor3 = Color3.fromRGB(255, 0, 0)
                     tlab.BackgroundTransparency = 1
             end
-        end
+            end
+    end
     else
         for i,v in next, game:GetService("Workspace").Chunks:GetDescendants() do
             if v.Name == "a esp" then
