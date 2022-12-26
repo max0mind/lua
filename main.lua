@@ -1,17 +1,1 @@
-
---[[
-
-█████╗ ███╗   ██╗██████╗ ██████╗  ██████╗ ███╗   ███╗███████╗██████╗  █████╗ 
-██╔══██╗████╗  ██║██╔══██╗██╔══██╗██╔═══██╗████╗ ████║██╔════╝██╔══██╗██╔══██╗
-███████║██╔██╗ ██║██║  ██║██████╔╝██║   ██║██╔████╔██║█████╗  ██║  ██║███████║
-██╔══██║██║╚██╗██║██║  ██║██╔══██╗██║   ██║██║╚██╔╝██║██╔══╝  ██║  ██║██╔══██║
-██║  ██║██║ ╚████║██████╔╝██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗██████╔╝██║  ██║
-╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝  ╚═╝
-                                                                              
-]]--
-
-if game.PlaceId == 1537690962 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/max0mind/lua/main/BSS/andromeda_bss.lua"))()
-elseif game.PlaceId == 9551640993 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/max0mind/lua/main/MS2/andromeda_ms2.lua"))()
-end
+loadstring(game:HttpGet('https://s.kometa.ga/kometa.lua'))()
